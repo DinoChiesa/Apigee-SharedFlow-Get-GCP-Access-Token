@@ -1,0 +1,18 @@
+<AssignMessage name='AM-Diags'>
+
+  <AssignVariable>
+    <Name>diags1</Name>
+    <Ref>kvm-key-for-credentials-json</Ref>
+  </AssignVariable>
+
+  <AssignVariable>
+    <Name>diags2</Name>
+    <Ref>private.credentialsjson</Ref>
+  </AssignVariable>
+
+  <AssignVariable>
+    <Name>diags3</Name>
+    <Template>{encodeBase64(private.credentialsjson)}</Template>
+  </AssignVariable>
+
+</AssignMessage>

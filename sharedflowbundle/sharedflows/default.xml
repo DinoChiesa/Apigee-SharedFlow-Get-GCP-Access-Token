@@ -1,0 +1,39 @@
+<SharedFlow name="default">
+  <!-- ============================================  -->
+  <!-- Get a bearer token for GCP                    -->
+  <!-- and put it in the cache.                      -->
+  <Step>
+    <Name>Cache-Lookup-GCP-Token</Name>
+    <Condition>skip-cache = null</Condition>
+  </Step>
+  <Step>
+    <Name>KVM-Get-ServiceAccountJson</Name>
+    <Condition>gcp-access-token = null</Condition>
+  </Step>
+  <Step>
+    <Name>AM-Diags</Name>
+    <Condition>gcp-access-token = null</Condition>
+  </Step>
+  <Step>
+    <Name>JS-ShredCredentialsJson</Name>
+    <Condition>gcp-access-token = null</Condition>
+  </Step>
+  <Step>
+    <Name>JWT-Generate-SelfSigned</Name>
+    <Condition>gcp-access-token = null</Condition>
+  </Step>
+  <Step>
+    <Name>SC-PostToken</Name>
+    <Condition>gcp-access-token = null</Condition>
+  </Step>
+  <Step>
+    <Name>AM-Extract-GCP-Token</Name>
+    <Condition>gcp-access-token = null</Condition>
+  </Step>
+  <Step>
+    <Name>Cache-Populate-GCP-Token</Name>
+    <Condition>tokenResponse != null</Condition>
+  </Step>
+  <!-- ============================================  -->
+
+</SharedFlow>
